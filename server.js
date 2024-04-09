@@ -1,6 +1,6 @@
 const express = require("express");
 const http = require("http");
-require("dotenv");
+require("dotenv").config();
 const { Server } = require("socket.io");
 const cors = require("cors");
 
@@ -12,6 +12,12 @@ app.get("/", (req, res) => {
   res.json({
     message: "Hello",
   });
+});
+
+// "http://192.168.1.107:3000/" adresini ekle
+app.use((req, res, next) => {
+  res.setHeader('Access-Control-Allow-Origin', 'http://192.168.1.107:3000');
+  next();
 });
 
 const server = http.createServer(app);
