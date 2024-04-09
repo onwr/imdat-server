@@ -9,9 +9,7 @@ const app = express();
 app.use(cors());
 
 app.get("/", (req, res) => {
-  res.json({
-    message: "Hello",
-  });
+  res.send("İMDAT");
 });
 
 // "http://192.168.1.107:3000/" adresini ekle
