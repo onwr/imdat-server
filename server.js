@@ -8,6 +8,12 @@ const app = express();
 
 app.use(cors());
 
+app.get("/", (req, res) => {
+  res.json({
+    message: "Hello",
+  });
+});
+
 const server = http.createServer(app);
 
 const io = new Server(server, {
