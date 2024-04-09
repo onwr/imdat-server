@@ -1,2 +1,0 @@
-# iyimisin-server
- 
